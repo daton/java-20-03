@@ -31,6 +31,12 @@ public class ArregloTriangulos {
           triangulos[0]=tr1;
           triangulos[1]=tr2;
           triangulos[2]=tr3;
+         //Ahora vamos a invocar el metodo calcularArea para cada trangulo
+         //Para ello vamos a usar el ciclo for
+         for(Triangulo t: triangulos ){
+     System.out.println("El area de este triangulo es "+t.calcularArea());
+         }
+         
           
           
         

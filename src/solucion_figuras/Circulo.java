@@ -5,15 +5,16 @@
  */
 package solucion_figuras;
 
-public class Triangulo extends Figura {
-
-    float base;
-    float altura;
-
+/**
+ *
+ * @author juan_
+ */
+public class Circulo extends Figura{
+float r;
     @Override
     public float calcularArea() {
-        float resul = base * altura / 2;
-        return resul;
+       float resul=3.1416f*r*r;
+       return resul;
     }
-
+    
 }

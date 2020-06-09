@@ -13,36 +13,33 @@ public class ArregloTriangulos {
 
     public static void main(String[] args) {
         //Creamos el arreglo de tipo Triangulo
-        Triangulo triangulos[] = new Triangulo[3];
-        Triangulo tr1 = new Triangulo();
-        tr1.base = 5;
-        tr1.altura = 6;
-        //  T2 base =8.4 altura =7
-        //T3 base =6 altura=13.5
-        Triangulo tr2 = new Triangulo();
-        tr2.base = 8.4f;
-        tr2.altura = 7;
-
-        Triangulo tr3 = new Triangulo();
-        tr3.base = 6;
-        tr3.altura = 13.5f;
-
-        //El siguiente paso es agregarlos al arreglo:
-        triangulos[0] = tr1;
-        triangulos[1] = tr2;
-        triangulos[2] = tr3;
-        //Ahora vamos a invocar el metodo calcularArea para cada trangulo
-        //Para ello vamos a usar el ciclo for
-        //El lado de la izquierda de los dos puntitos es una declaracion de una variable
-        //Con cualquier nombre, aqui se llama "t" y DEBE SER DEL TIPO DE ELEMENTOS
-        //QUE CONTIENE EL ARREGLO
-        for (Triangulo t : triangulos) {
-            System.out.println("El area de este triangulo es " + t.calcularArea());
+        //Para usar la herencia vamos a crear un Arreglo de Figuras
+        Figura []figuras=new Figura[3];
+        //AQUI VIENE LA MAGIA!!! PORQUE EN ESE ARREGLO PODEMOS
+        //AGREGAR elemento DE LOS SUBTIPOS.
+        //Creamos un triangulo
+        Triangulo t1=new Triangulo();
+        t1.altura=6;
+        t1.base=5;
+        //Un Cuadrado
+        Cuadrado c1=new Cuadrado();
+        c1.lado=5;
+        //Generamo un circulo
+        Circulo cir1=new Circulo();
+        cir1.r=5.2f;
+        //Ahora llenamos los 3 elementos de nuesto arreglo con ellas
+        figuras[0]=t1;
+        figuras[1]=c1;
+        figuras[2]=cir1;
+        
+        //La ventaja esta en que al invoca el metodo solo necesitas
+        //un solo tipo: EL  SUPER TIPO
+        for(Figura f:figuras){
+            System.out.println("El area es: "+f.calcularArea());
         }
-       System.out.println("Con java tradicional -----------------------") ;
-        for(int i=0;i<triangulos.length;i++){
-            System.out.println("El area de este triangulo es " + triangulos[i].calcularArea());  
-        }
+        
+        
+        
 
     }
 

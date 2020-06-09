@@ -5,15 +5,13 @@
  */
 package solucion_figuras;
 
-public class Triangulo extends Figura {
 
-    float base;
-    float altura;
-
+public class Cuadrado extends Figura{
+float lado;
     @Override
     public float calcularArea() {
-        float resul = base * altura / 2;
-        return resul;
+       float res=lado*lado;
+       return res;
     }
-
+    
 }

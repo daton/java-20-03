@@ -23,7 +23,7 @@ public class ArregloTriangulos {
         t1.base=5;
         //Un Cuadrado
         Cuadrado c1=new Cuadrado();
-        c1.lado=5;
+        c1.setLado(5); 
         //Generamo un circulo
         Circulo cir1=new Circulo();
         cir1.r=5.2f;
@@ -42,5 +42,7 @@ public class ArregloTriangulos {
         
 
     }
+    
+   
 
 }

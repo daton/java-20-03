@@ -7,11 +7,22 @@ package solucion_figuras;
 
 
 public class Cuadrado extends Figura{
-float lado;
+ //Los atributos siempre van con el modificador private   
+  private float lado; 
+ 
+
     @Override
     public float calcularArea() {
        float res=lado*lado;
        return res;
     }
-    
+
+    public float getLado() {
+        return lado;
+    }
+
+    public void setLado(float lado) {
+        this.lado = lado;
+    }
+  
 }

@@ -30,6 +30,9 @@ public class Referenciados {
        //primario
        
         int numeroPromovido=Integer.parseInt(falsoNumero);
+        String falsoFlotante="23.5f";
+        float flotanteReal=Float.parseFloat(falsoFlotante);
+        
         
     }
     

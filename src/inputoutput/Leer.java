@@ -6,7 +6,7 @@
 package inputoutput;
 
 import java.io.*;
-
+//Ya hasta aqui termina la serializacion con el ejemplo basico
 public class Leer {
 
     public static void main(String[] args) {

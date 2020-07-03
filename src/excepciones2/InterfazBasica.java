@@ -75,7 +75,12 @@ public class InterfazBasica extends javax.swing.JFrame {
         //Capturamos el valor del campo de texto y lo convertimos a numero
         try{
          int edad=    Integer.parseInt(texto.getText());
+      //   Validaciones v=new Validaciones();
+         
          Validaciones.validarEdadNoNegativa(edad); 
+         
+        // Validaciones.validarEdadNoNegativa(edad);   
+         
          //Si tu aqui dentro del try pones un renglon que no lanza excepcion
          //NO PASA NADA!!, lo puedes hacer..
 //Ahora multiplicamos por 365 ese valor para que nos de la edad en dias

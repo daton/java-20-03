@@ -7,7 +7,10 @@ package excepciones2;
 
 
 public class Validaciones {
+    
     public static void validarEdadNoNegativa(int edad)throws EdadNegativaException{
-        if(edad<0)throw  new EdadNegativaException();
+        if(edad<0){
+            throw  new EdadNegativaException();
+        }
     }
 }

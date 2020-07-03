@@ -31,7 +31,7 @@ public class Primarios {
        s=b;
        
        i=s;
-     //  b=l;
+       b=(byte)l;
        l=i;
   //    s=i;
     //Nota importante: Cuando asignan datos de

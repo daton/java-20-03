@@ -27,18 +27,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="etiquetaTituloPregunta" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="etiquetaRespueta" max="32767" attributes="0"/>
+                  <Component id="etiquetaTituloPregunta" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="botonRespuesta" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion3" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion2" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion1" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="320" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="296" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -58,7 +60,11 @@
               <Component id="radiotituloOpcion2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="radiotituloOpcion3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="141" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="botonRespuesta" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="etiquetaRespueta" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,6 +106,16 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jRadioButton4"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonRespuesta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Checar respuesta"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRespuestaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiquetaRespueta">
     </Component>
   </SubComponents>
 </Form>

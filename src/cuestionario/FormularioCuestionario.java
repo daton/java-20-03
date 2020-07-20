@@ -9,32 +9,33 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JRadioButton;
 
-
 /**
  *
  * @author juan_
  */
 public class FormularioCuestionario extends javax.swing.JFrame {
 
-   //Vamos a generar un List de radioButtons
-    List<JRadioButton> radios=new ArrayList<>();
-    
-    
+    //Vamos a generar un List de radioButtons
+    List<JRadioButton> radios = new ArrayList<>();
+    List<Pregunta> preguntas = new ArrayList<>();
+    int preguntaActual=0;
+
     public FormularioCuestionario() {
         initComponents();
-       //Aqui dentro del constructor de nuestro formulario
-       //invocamos nuesto metodo generarCuestionario()
-       //LLenamos lo radios
-       radios.add(radiotituloOpcion0);
-       radios.add(radiotituloOpcion1);
-       radios.add(radiotituloOpcion2);
-       radios.add(radiotituloOpcion3);
-       
-       generarCuestionario();
-        
+        //Aqui dentro del constructor de nuestro formulario
+        //invocamos nuesto metodo generarCuestionario()
+        //LLenamos lo radios
+        radios.add(radiotituloOpcion0);
+        radios.add(radiotituloOpcion1);
+        radios.add(radiotituloOpcion2);
+        radios.add(radiotituloOpcion3);
+
+        generarCuestionario();
+
     }
+
     //Aqui vamos a pegar el metodo
-      public void generarCuestionario(){
+    public void generarCuestionario() {
         //Con el modelo construido debemos representar uestra pregunta
         //y mostrarala
         //Primero creamos las opciones
@@ -59,25 +60,55 @@ public class FormularioCuestionario extends javax.swing.JFrame {
         Pregunta p1 = new Pregunta();
         p1.setTitulo("¿Cual es la capital de Francia");
         p1.setOpciones(opciones);
+        
+        //Primero creamos las opciones
+        Opcion op21 = new Opcion();
+        op21.setTitulo("Atlantico");
+        op21.setCorrecta(false);
+
+        Opcion op22 = new Opcion();
+        op22.setTitulo("Indico");
+        op22.setCorrecta(false);
+
+        Opcion op23 = new Opcion();
+        op23.setTitulo("Artico");
+        op23.setCorrecta(false);
+
+        Opcion op24 = new Opcion();
+        op24.setTitulo("Pacifico");
+        op24.setCorrecta(true);
+
+        //Sigue el arreglo de opcion
+        Opcion[] opciones2 = {op21, op22, op23, op24};
+        Pregunta p2 = new Pregunta();
+        p2.setTitulo("¿Cual es el oceano más grande del mundo?");
+        p2.setOpciones(opciones2);
+
 
         //Vamos a adaptar el cuestioanario a lo que ya teniamos
         Cuestionario c = new Cuestionario();
         //Creamos el list de preguntas
-        List<Pregunta> preguntas = new ArrayList<>();
+
         //Se agrega a este list la unica prgunta que tenemos
         preguntas.add(p1);
+        preguntas.add(p2);
         //A este list le vamos a proporcionar el valor del correspondiente
         //cuestioanrio
         c.setPreguntas(preguntas);
 //Primero ajustamos el titulo de la primer pregunta en la etiqueta de la preunta
-  etiquetaTituloPregunta.setText(preguntas.get(0).getTitulo());
-  //Llenamos con el modelo los radio buttons
-  for(int i=0;i<radios.size();i++){
-      radios.get(i).setText(preguntas.get(0).getOpciones()[i].getTitulo());
-  }
-       
-         
+    mostrarPregunta(preguntaActual);
+        
     }
+public void mostrarPregunta(int indicePregunta){
+    etiquetaTituloPregunta.setText(preguntas.get(indicePregunta).getTitulo());
+
+        //Llenamos con el modelo los radio buttons
+        for (int i = 0; i < radios.size(); i++) {
+            radios.get(i).setText(preguntas.get(indicePregunta).getOpciones()[i].getTitulo());
+        }
+
+}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,6 +125,8 @@ public class FormularioCuestionario extends javax.swing.JFrame {
         radiotituloOpcion1 = new javax.swing.JRadioButton();
         radiotituloOpcion2 = new javax.swing.JRadioButton();
         radiotituloOpcion3 = new javax.swing.JRadioButton();
+        botonRespuesta = new javax.swing.JButton();
+        etiquetaRespueta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,21 +144,30 @@ public class FormularioCuestionario extends javax.swing.JFrame {
         grupo.add(radiotituloOpcion3);
         radiotituloOpcion3.setText("jRadioButton4");
 
+        botonRespuesta.setText("Checar respuesta");
+        botonRespuesta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRespuestaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(etiquetaRespueta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonRespuesta)
                             .addComponent(radiotituloOpcion3)
                             .addComponent(radiotituloOpcion2)
                             .addComponent(radiotituloOpcion1)
                             .addComponent(radiotituloOpcion0))
-                        .addGap(0, 320, Short.MAX_VALUE)))
+                        .addGap(0, 296, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -141,11 +183,33 @@ public class FormularioCuestionario extends javax.swing.JFrame {
                 .addComponent(radiotituloOpcion2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radiotituloOpcion3)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonRespuesta)
+                .addGap(18, 18, 18)
+                .addComponent(etiquetaRespueta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRespuestaActionPerformed
+      
+          if(preguntaActual<preguntas.size()){
+        Opcion[] opciones = preguntas.get(preguntaActual).getOpciones();
+       boolean acierto=false;
+        for (int i = 0; i < radios.size(); i++) {
+            if (radios.get(i).isSelected() && opciones[i].isCorrecta()) {   
+                acierto=true;
+                break;
+            }
+        } //Aqui termina el for
+       etiquetaRespueta.setText("Tu respuesta es  "+acierto);
+          preguntaActual++;
+      mostrarPregunta(preguntaActual);
+          }
+
+    }//GEN-LAST:event_botonRespuestaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +247,8 @@ public class FormularioCuestionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonRespuesta;
+    private javax.swing.JLabel etiquetaRespueta;
     private javax.swing.JLabel etiquetaTituloPregunta;
     private javax.swing.ButtonGroup grupo;
     private javax.swing.JRadioButton radiotituloOpcion0;
@@ -190,4 +256,18 @@ public class FormularioCuestionario extends javax.swing.JFrame {
     private javax.swing.JRadioButton radiotituloOpcion2;
     private javax.swing.JRadioButton radiotituloOpcion3;
     // End of variables declaration//GEN-END:variables
+
+    public boolean checarRespuesta(Opcion[] opciones) {
+        boolean correcta = false;
+
+        for (int i = 0; i < radios.size(); i++) {
+            if (radios.get(i).isSelected() && opciones[i].isCorrecta()) {
+                System.out.println("Ya le atinaste");
+                correcta = true;
+                break;
+            }
+        }
+
+        return correcta;
+    }
 }

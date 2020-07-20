@@ -61,7 +61,7 @@ public class FormularioCuestionario extends javax.swing.JFrame {
         p1.setTitulo("¿Cual es la capital de Francia");
         p1.setOpciones(opciones);
         
-        //Primero creamos las opciones
+        //Opiciones de la pregumta Numero 2
         Opcion op21 = new Opcion();
         op21.setTitulo("Atlantico");
         op21.setCorrecta(false);
@@ -100,6 +100,8 @@ public class FormularioCuestionario extends javax.swing.JFrame {
         
     }
 public void mostrarPregunta(int indicePregunta){
+    //Checar si el indice de pregunta no rebaso el numero de preguntas
+    //dentro del arraylist preguntas.
     etiquetaTituloPregunta.setText(preguntas.get(indicePregunta).getTitulo());
 
         //Llenamos con el modelo los radio buttons
@@ -205,8 +207,14 @@ public void mostrarPregunta(int indicePregunta){
             }
         } //Aqui termina el for
        etiquetaRespueta.setText("Tu respuesta es  "+acierto);
+       //Este incremento hace que la siguiente pregunta sea incrementada en 1
           preguntaActual++;
+        //Para  que no se lance la expcion hacer que el metodo mostrar pregunta
+        //no muestre la preguta si el tamaño de ArrayList ue se llama preguntas
+        // ya no tiene mas preguntas, debes de apoyarte del metodo size()
       mostrarPregunta(preguntaActual);
+      
+      
           }
 
     }//GEN-LAST:event_botonRespuestaActionPerformed

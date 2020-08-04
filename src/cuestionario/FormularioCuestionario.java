@@ -129,10 +129,12 @@ public void mostrarPregunta(int indicePregunta){
         radiotituloOpcion3 = new javax.swing.JRadioButton();
         botonRespuesta = new javax.swing.JButton();
         etiquetaRespueta = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        etiquetaTituloPregunta.setText("jLabel1");
+        etiquetaTituloPregunta.setBackground(new java.awt.Color(102, 255, 51));
+        etiquetaTituloPregunta.setIcon(new javax.swing.ImageIcon("C:\\Users\\juan_\\OneDrive\\Desktop\\pexels-vishal-shah-2574643.jpg")); // NOI18N
 
         grupo.add(radiotituloOpcion0);
         radiotituloOpcion0.setText("jRadioButton1");
@@ -153,6 +155,8 @@ public void mostrarPregunta(int indicePregunta){
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,35 +165,39 @@ public void mostrarPregunta(int indicePregunta){
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(etiquetaRespueta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonRespuesta)
-                            .addComponent(radiotituloOpcion3)
-                            .addComponent(radiotituloOpcion2)
-                            .addComponent(radiotituloOpcion1)
-                            .addComponent(radiotituloOpcion0))
-                        .addGap(0, 296, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonRespuesta, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radiotituloOpcion3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radiotituloOpcion2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radiotituloOpcion1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radiotituloOpcion0, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(60, 60, 60)
+                        .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(etiquetaTituloPregunta)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(radiotituloOpcion0)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(radiotituloOpcion1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(radiotituloOpcion2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(radiotituloOpcion3)
-                .addGap(18, 18, 18)
-                .addComponent(botonRespuesta)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(radiotituloOpcion0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(radiotituloOpcion1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(radiotituloOpcion2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(radiotituloOpcion3)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonRespuesta))
+                    .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(etiquetaRespueta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -259,6 +267,7 @@ public void mostrarPregunta(int indicePregunta){
     private javax.swing.JLabel etiquetaRespueta;
     private javax.swing.JLabel etiquetaTituloPregunta;
     private javax.swing.ButtonGroup grupo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton radiotituloOpcion0;
     private javax.swing.JRadioButton radiotituloOpcion1;
     private javax.swing.JRadioButton radiotituloOpcion2;

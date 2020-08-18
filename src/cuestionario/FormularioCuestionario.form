@@ -33,15 +33,14 @@
                   <Component id="etiquetaRespueta" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="etiquetaPregunta" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="botonRespuesta" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="radiotituloOpcion0" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="etiquetaTituloPregunta" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="700" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -52,40 +51,25 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="etiquetaPregunta" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="radiotituloOpcion0" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="radiotituloOpcion1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="radiotituloOpcion2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="radiotituloOpcion3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="botonRespuesta" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="etiquetaTituloPregunta" max="32767" attributes="0"/>
-              </Group>
+              <Component id="radiotituloOpcion0" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="radiotituloOpcion1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="radiotituloOpcion2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="radiotituloOpcion3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="botonRespuesta" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="etiquetaRespueta" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="654" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="etiquetaTituloPregunta">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="ff" red="66" type="rgb"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\juan_\OneDrive\Desktop\pexels-vishal-shah-2574643.jpg"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JRadioButton" name="radiotituloOpcion0">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
@@ -128,7 +112,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="etiquetaRespueta">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="etiquetaPregunta">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

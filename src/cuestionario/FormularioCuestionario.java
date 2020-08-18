@@ -102,7 +102,7 @@ public class FormularioCuestionario extends javax.swing.JFrame {
 public void mostrarPregunta(int indicePregunta){
     //Checar si el indice de pregunta no rebaso el numero de preguntas
     //dentro del arraylist preguntas.
-    etiquetaTituloPregunta.setText(preguntas.get(indicePregunta).getTitulo());
+    etiquetaPregunta.setText(preguntas.get(indicePregunta).getTitulo());
 
         //Llenamos con el modelo los radio buttons
         for (int i = 0; i < radios.size(); i++) {
@@ -122,19 +122,15 @@ public void mostrarPregunta(int indicePregunta){
     private void initComponents() {
 
         grupo = new javax.swing.ButtonGroup();
-        etiquetaTituloPregunta = new javax.swing.JLabel();
         radiotituloOpcion0 = new javax.swing.JRadioButton();
         radiotituloOpcion1 = new javax.swing.JRadioButton();
         radiotituloOpcion2 = new javax.swing.JRadioButton();
         radiotituloOpcion3 = new javax.swing.JRadioButton();
         botonRespuesta = new javax.swing.JButton();
         etiquetaRespueta = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        etiquetaPregunta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        etiquetaTituloPregunta.setBackground(new java.awt.Color(102, 255, 51));
-        etiquetaTituloPregunta.setIcon(new javax.swing.ImageIcon("C:\\Users\\juan_\\OneDrive\\Desktop\\pexels-vishal-shah-2574643.jpg")); // NOI18N
 
         grupo.add(radiotituloOpcion0);
         radiotituloOpcion0.setText("jRadioButton1");
@@ -155,7 +151,7 @@ public void mostrarPregunta(int indicePregunta){
             }
         });
 
-        jLabel1.setText("jLabel1");
+        etiquetaPregunta.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,37 +163,33 @@ public void mostrarPregunta(int indicePregunta){
                     .addComponent(etiquetaRespueta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etiquetaPregunta, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonRespuesta, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radiotituloOpcion3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radiotituloOpcion2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radiotituloOpcion1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radiotituloOpcion0, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(60, 60, 60)
-                        .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 700, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel1)
+                .addComponent(etiquetaPregunta)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(radiotituloOpcion0)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(radiotituloOpcion1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(radiotituloOpcion2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(radiotituloOpcion3)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonRespuesta))
-                    .addComponent(etiquetaTituloPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(radiotituloOpcion0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(radiotituloOpcion1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(radiotituloOpcion2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(radiotituloOpcion3)
                 .addGap(18, 18, 18)
+                .addComponent(botonRespuesta)
+                .addGap(32, 32, 32)
                 .addComponent(etiquetaRespueta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(654, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,6 +200,9 @@ public void mostrarPregunta(int indicePregunta){
           if(preguntaActual<preguntas.size()){
         Opcion[] opciones = preguntas.get(preguntaActual).getOpciones();
        boolean acierto=false;
+       //Validamos si algun radio button fue seleccionado
+       
+       
         for (int i = 0; i < radios.size(); i++) {
             if (radios.get(i).isSelected() && opciones[i].isCorrecta()) {   
                 acierto=true;
@@ -224,6 +219,7 @@ public void mostrarPregunta(int indicePregunta){
       
       
           }
+          
 
     }//GEN-LAST:event_botonRespuestaActionPerformed
 
@@ -264,10 +260,9 @@ public void mostrarPregunta(int indicePregunta){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRespuesta;
+    private javax.swing.JLabel etiquetaPregunta;
     private javax.swing.JLabel etiquetaRespueta;
-    private javax.swing.JLabel etiquetaTituloPregunta;
     private javax.swing.ButtonGroup grupo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton radiotituloOpcion0;
     private javax.swing.JRadioButton radiotituloOpcion1;
     private javax.swing.JRadioButton radiotituloOpcion2;
